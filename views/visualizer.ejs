@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizer | Infix to Postfix</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="page-shell narrow">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Stack Visualization</p>
+          <h1>Algorithm Trace</h1>
+        </div>
+        <a href="/" class="secondary-btn">Back Home</a>
+      </header>
+
+      <main class="container">
+        <section class="panel">
+          <div class="sample-box">
+            <span>Expression</span>
+            <strong><%= expression %></strong>
+          </div>
+
+          <% if (error) { %>
+            <div class="alert error">
+              <strong>Invalid expression.</strong>
+              <span><%= error.message %></span>
+            </div>
+          <% } %>
+
+          <% if (result && result.success) { %>
+            <div class="result-grid single">
+              <div class="result-card">
+                <span class="label">Final Postfix</span>
+                <strong class="value"><%= result.postfix %></strong>
+              </div>
+            </div>
+
+            <div class="steps-panel">
+              <% result.steps.forEach((step) => { %>
+                <div class="step-item">
+                  <div class="step-header">
+                    <span class="step-index">#<%= step.index %></span>
+                    <span class="badge"><%= step.action %></span>
+                    <span class="token"><%= step.token %></span>
+                  </div>
+                  <p class="reason"><%= step.reason %></p>
+                  <div class="state-grid">
+                    <div>
+                      <span>Stack</span>
+                      <strong><%= step.stack.length ? step.stack.join(' ') : '[]' %></strong>
+                    </div>
+                    <div>
+                      <span>Output</span>
+                      <strong><%= step.output.length ? step.output.join(' ') : '[]' %></strong>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+            </div>
+          <% } %>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "infix-to-prefix-converter-dsa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node algorithms/testAlgorithms.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mustafa-s-commit/Infix-To-Prefix-converter-DSA.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Mustafa-s-commit/Infix-To-Prefix-converter-DSA/issues"
+  },
+  "homepage": "https://github.com/Mustafa-s-commit/Infix-To-Prefix-converter-DSA#readme",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "path": "^0.12.7",
+    "url": "^0.11.4"
+  }
+}
